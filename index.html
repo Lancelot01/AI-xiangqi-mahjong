@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>象棋麻將 Alpha 0.4.58</title>
+<title>象棋麻將 Alpha 0.5.01.00</title>
 <style>
 :root{--felt:#b77a35;--felt2:#6b3e21;--wood:#4a230f;--gold:#e9c56c;--tile:#fbf2da;--tile2:#d9bd84;--ink:#24150b;--red:#b31919;--black:#202020}
 *{box-sizing:border-box}body{margin:0;height:100vh;overflow:auto;background:radial-gradient(circle,#7b431c,#1b0d06 78%);font-family:"Microsoft JhengHei",system-ui,sans-serif;color:#fff;user-select:none}.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0}.table{position:relative;width:1920px;height:1080px;border-radius:42px;background:#b77a35;border:18px solid var(--wood);box-shadow:0 28px 70px #000c,inset 0 0 85px #0007}.title{z-index:5;position:absolute;left:34px;top:24px;font-size:44px;font-weight:1000;color:#ffe6a0;text-shadow:0 3px 3px #000}.topMenuBtn{z-index:32;position:absolute;right:34px;top:28px;border:0;border-radius:14px;padding:9px 16px;font-size:20px;font-weight:1000;background:linear-gradient(#eee,#aaa);color:#2b1607;box-shadow:0 4px 0 #54402a;cursor:pointer}.modeTag{font-size:24px;color:#fff;background:#0007;border:1px solid #e9c56c77;border-radius:999px;padding:5px 12px;margin-left:12px}.board{position:absolute;inset:88px 86px 132px 86px;background:#c99745;border:8px solid #5b2e12;border-radius:22px;box-shadow:inset 0 0 45px #0006,0 15px 40px #0007;overflow:hidden;z-index:0}.grid{position:absolute;inset:22px;background-image:linear-gradient(#603010 2px,transparent 2px),linear-gradient(90deg,#603010 2px,transparent 2px);background-size:96px 72px;opacity:.9}.river{position:absolute;top:0;bottom:0;left:50%;width:86px;transform:translateX(-50%);background:#d9ad5b;border-left:4px solid #603010;border-right:4px solid #603010;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;color:#4b240c;font-size:46px;font-weight:1000;letter-spacing:10px;writing-mode:vertical-rl;text-orientation:upright}.wallInfo{position:absolute;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);background:#0009;color:#ffe8a5;border:1px solid #ffe8a588;border-radius:18px;padding:14px 24px;font-size:24px;text-align:center;z-index:3}.seat{z-index:5;position:absolute;text-align:center}.seatName{font-size:32px;font-weight:1000;color:#ffe8a5;text-shadow:0 3px 4px #000}.seatSub{font-size:18px;color:#ddd}.north{top:24px;left:50%;transform:translateX(-50%)}.south{bottom:18px;left:50%;transform:translateX(-50%)}.east{right:32px;top:50%;transform:translateY(-50%)}.west{left:32px;top:50%;transform:translateY(-50%)}.hand{display:flex;gap:7px;align-items:center;justify-content:center;margin-top:8px}.east .hand,.west .hand{flex-direction:column}.tile{width:92px;height:128px;border-radius:13px;background:linear-gradient(180deg,#fffdf7 0%,#fff7e4 48%,#d9bf88 100%);border:4px solid #efe0bd;box-shadow:inset 0 0 0 2px #c9a667,0 8px 0 #8b642e,0 14px 18px #0009;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--black);font-weight:1000;position:relative;cursor:pointer;transition:.12s transform,.12s filter}.tile:after{content:"";position:absolute;inset:8px;border-radius:9px;border:1px solid #00000010}.tile:hover{transform:translateY(-10px);filter:brightness(1.08)}.tile .camp{display:none}.tile .piece{font-family:"DFKai-SB","KaiTi","Microsoft JhengHei",serif;font-size:72px;line-height:1;text-shadow:1px 2px 0 #0002}.tile.red .piece{color:#d51628;text-shadow:1px 2px 0 #6b000033}.tile.small{width:74px;height:104px;border-radius:9px;box-shadow:inset 0 0 0 2px #c9a667,0 5px 0 #8b642e,0 8px 12px #0008}.tile.small .piece{font-size:56px}.tile.back{background:linear-gradient(135deg,#6b1e12,#2b1008);border-color:#f1d083;box-shadow:inset 0 0 0 2px #a45a22,0 6px 0 #3d2615,0 10px 14px #0009}.tile.back:before{content:"棋";font-family:"DFKai-SB","KaiTi","Microsoft JhengHei",serif;font-size:48px;color:#ffe09a;border:3px solid #ffe09aaa;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;text-shadow:0 2px 3px #000}.tile.back .camp,.tile.back .piece{display:none}.side{transform:rotate(90deg);margin:8px 0}.discard{z-index:5;position:absolute;display:flex;gap:7px;flex-wrap:wrap;min-height:62px;padding:6px;border-radius:12px;background:#0000002b;border:1px solid #ffffff16}.discard.n{top:285px;left:50%;transform:translateX(-50%);max-width:560px}.discard.s{bottom:355px;left:50%;transform:translateX(-50%);max-width:620px}.discard.e{right:338px;top:50%;transform:translateY(-50%);max-width:170px}.discard.w{left:338px;top:50%;transform:translateY(-50%);max-width:170px}.melds{z-index:5;position:absolute;display:flex;gap:8px;flex-wrap:wrap;max-width:420px}.melds.s{bottom:245px;left:50%;transform:translateX(-50%);max-width:560px;justify-content:center}.melds.n{top:145px;left:50%;transform:translateX(-50%);max-width:560px;justify-content:center}.melds.e{right:210px;top:50%;transform:translateY(-50%);max-width:170px;flex-direction:column}.melds.w{left:210px;top:50%;transform:translateY(-50%);max-width:170px;flex-direction:column}.meld{display:flex;gap:2px;padding:4px;background:#0007;border:1px solid #e9c56c77;border-radius:10px}.actions{z-index:30;position:absolute;left:235px;bottom:78px;transform:none;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-start;align-items:center;width:360px;min-height:42px;pointer-events:auto}.btn{border:0;border-radius:11px;padding:8px 16px;font-size:18px;font-weight:1000;background:linear-gradient(#ffe8a5,#c89632);color:#321b08;cursor:pointer;box-shadow:0 4px 0 #744b18}.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #744b18}.seat.turn .seatName{color:#fff7c8;text-shadow:0 0 14px #fff,0 0 28px #ffcc38,0 3px 4px #000}.seat.turn:before{content:"";position:absolute;inset:-18px;border:3px solid #ffe680;border-radius:22px;box-shadow:0 0 28px #ffdf61, inset 0 0 22px #ffdf6144;pointer-events:none}.turnHint{position:absolute;left:235px;bottom:126px;transform:none;z-index:31;background:#000b;border:1px solid #ffe8a588;color:#ffe8a5;border-radius:999px;padding:7px 18px;font-size:20px;font-weight:1000;display:none}.turnHint.show{display:block;pointer-events:none}.btn.gray{background:linear-gradient(#eee,#aaa)}.btn:disabled{pointer-events:none;opacity:.85}.panel{z-index:5;position:absolute;right:34px;bottom:34px;width:300px;background:#0008;border:1px solid #e9c56c77;border-radius:14px;padding:10px;line-height:1.35;font-size:15px}.panel b{font-size:17px;color:#ffe8a5}.log{height:92px;overflow:auto;background:#0004;border-radius:8px;padding:7px;font-size:14px}.ruleSummary{display:none}.toast{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.75);font-size:124px;font-weight:1000;color:#fff1b5;text-shadow:0 0 16px #ff3b00,0 8px 0 #6d1e10,0 24px 48px #000;opacity:0;pointer-events:none;z-index:80}.toast.seatToast{font-size:96px}.toast.pos0{left:50%;top:73%}.toast.pos1{left:82%;top:48%}.toast.pos2{left:50%;top:22%}.toast.pos3{left:18%;top:48%}.revealBlock{margin:12px 0 6px}.revealName{font-size:24px;font-weight:1000;margin:8px 0 4px}.winTypes{margin:10px auto 8px;padding:10px 14px;border-radius:16px;background:#fff5;font-size:26px;font-weight:1000;line-height:1.7;color:#b30000}.winTypes span{display:inline-block;margin:4px 6px;padding:4px 14px;border-radius:999px;background:#ffe6e6;border:2px solid #d40000;color:#b30000}.revealHands{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}.tile.winGlow{box-shadow:0 0 0 4px #b7ffb0,0 0 24px #79ff74,0 8px 0 #6f8d4c,0 14px 18px #0009!important;background:linear-gradient(180deg,#fafff4 0%,#ecffe6 48%,#cfe6ad 100%)}.tile.winGlow.goldGlow,.tile.goldGlow{box-shadow:0 0 0 5px #fff,0 0 0 9px #ffe873,0 0 34px #fff,0 0 58px #ffd21f,0 0 78px #ffad00cc,0 8px 0 #a16b00,0 14px 18px #0009!important;background:linear-gradient(180deg,#fffdf0 0%,#ffe98b 48%,#d7a53a 100%);filter:brightness(1.25)}.toast.show{animation:pop .3s ease-out}.toast.winShow{animation:winPop 2.5s ease-out}.toast.drawShow{animation:drawPop 1s ease-out}@keyframes pop{0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}30%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}100%{opacity:0;transform:translate(-50%,-50%) scale(.95)}}@keyframes winPop{0%{opacity:0;transform:translate(-50%,-50%) scale(.45)}10%{opacity:1;transform:translate(-50%,-50%) scale(1.22)}82%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(.92)}}@keyframes drawPop{0%{opacity:0;transform:translate(-50%,-50%) scale(.5)}20%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}80%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(.95)}}.choice{z-index:35;position:absolute;left:235px;bottom:78px;transform:none;display:none;gap:8px;background:#000b;padding:10px;border-radius:14px;border:1px solid #e9c56c99}.choice.show{display:flex}.modal,.start{position:absolute;inset:0;background:#0005;display:none;align-items:center;justify-content:center;z-index:90}.modal.show,.start.show{display:flex}.card{width:min(720px,82vw);border-radius:26px;background:linear-gradient(#fff0c8,#c99643);color:#241306;padding:28px;text-align:center;box-shadow:0 25px 70px #000}.card h1{font-size:58px;margin:0 0 8px}.card p{font-size:24px;line-height:1.7}.speedBox{margin:18px auto 8px;padding:14px 18px;border-radius:16px;background:#0002;font-size:22px;width:620px;max-width:100%}.speedBox input{width:420px;max-width:70%;accent-color:#6b2b10}.speedValue{display:inline-block;width:70px;font-weight:1000;color:#5b2108}.modeBtns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:18px}.bigbtn{width:340px;min-height:160px}.winTiles{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0}.note{font-size:13px;color:#ffe8a5}.hidden{display:none!important}
@@ -475,6 +475,15 @@
   100%{opacity:0}
 }
 
+
+.aiHostBtn{z-index:50;position:absolute;right:34px;top:132px;border:0;border-radius:14px;padding:8px 14px;font-size:18px;font-weight:1000;background:linear-gradient(#d7f2ff,#66aaf8);color:#10243a;box-shadow:0 4px 0 #275070;cursor:pointer}
+.aiHostBtn.on{background:linear-gradient(#fff2bd,#ff9b42);color:#3a1c08;box-shadow:0 4px 0 #744b18}
+.trainNotice{position:absolute;inset:0;background:#0009;display:none;align-items:center;justify-content:center;z-index:140}.trainNotice.show{display:flex}.trainNoticeCard{width:min(760px,86vw);border-radius:26px;background:linear-gradient(#fff6d6,#d5a14a);color:#241306;padding:28px;text-align:center;box-shadow:0 25px 80px #000}.trainNoticeCard h1{font-size:48px;margin:0 0 10px}.trainNoticeCard p{font-size:24px;line-height:1.65}.trainMini{font-size:18px;color:#5b2108;font-weight:900;margin-top:6px}
+
+
+/* 0.5 AI資料庫與四局訓練 */
+.aiDbBox{margin:12px auto;padding:12px 16px;border-radius:16px;background:#0002;border:1px solid #7b4a1d55;font-size:19px;font-weight:900;line-height:1.55;max-width:650px;text-align:left}
+.aiDbBox b{color:#8c0000}.aiDbGrid{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}.trainOverlay{position:absolute;inset:0;background:#0008;display:none;align-items:center;justify-content:center;z-index:130}.trainOverlay.show{display:flex}.trainCard{width:min(980px,90vw);border-radius:26px;background:linear-gradient(#fff0c8,#c99643);color:#241306;padding:26px;text-align:center;box-shadow:0 25px 70px #000}.trainCard h1{font-size:52px;margin:0 0 8px}.trainStats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.trainTableBox{background:#0002;border:1px solid #7b4a1d66;border-radius:16px;padding:12px;font-size:22px;font-weight:1000}.trainBig{font-size:38px;color:#8c0000}.trainProgress{height:22px;border-radius:999px;background:#0004;overflow:hidden;margin:12px 0}.trainProgressFill{height:100%;width:0%;background:linear-gradient(90deg,#8c0000,#ffe878);transition:.2s}.trainMini{font-size:18px;font-weight:900;color:#5b2108;margin:8px 0}.trainNoticeCard .btn{min-width:150px}.aiHostBtn.on{background:linear-gradient(#b7ffb0,#35a852)!important;color:#082b10!important}
 </style>
 
 <style id="eastwest-meld-fix">
@@ -789,10 +798,41 @@
 }
 </style>
 
+
+<style id="compact-menu-notice-501">
+/* 0.5.01：主選單與公告縮小版 */
+.start{background:#0003 !important;}
+.start .card{width:620px !important;max-height:92vh !important;overflow:auto !important;border-radius:20px !important;padding:18px 22px !important;}
+.start .card h1{font-size:38px !important;margin:0 0 6px !important;}
+.start .card h2{font-size:22px !important;margin:10px 0 6px !important;}
+.speedBox{margin:8px auto !important;padding:8px 12px !important;font-size:17px !important;width:520px !important;}
+.speedBox input{width:320px !important;}
+.mainSelect{gap:8px !important;margin:6px 0 !important;}
+.selectBtn{border-radius:12px !important;padding:9px 15px !important;font-size:20px !important;min-width:128px !important;box-shadow:0 3px 0 #6b5335 !important;}
+.aiDifficultyNote{font-size:15px !important;margin-top:2px !important;}
+.aiDbBox{margin:8px auto !important;padding:8px 10px !important;border-radius:12px !important;font-size:15px !important;line-height:1.35 !important;max-width:540px !important;}
+.aiDbGrid{grid-template-columns:1fr 1fr 1fr !important;gap:3px 8px !important;}
+.modeBtns{gap:8px !important;margin-top:10px !important;}
+.bigbtn{width:150px !important;min-height:48px !important;}
+.start .btn{font-size:17px !important;padding:8px 14px !important;border-radius:10px !important;}
+.trainNotice{background:#0007 !important;}
+.trainNoticeCard{width:520px !important;border-radius:20px !important;padding:18px 22px !important;}
+.trainNoticeCard h1{font-size:34px !important;margin:0 0 8px !important;}
+.trainNoticeCard p{font-size:18px !important;line-height:1.45 !important;margin:8px 0 !important;}
+.trainMini{font-size:15px !important;margin:4px 0 !important;}
+.compactBtns .btn{min-width:110px !important;font-size:17px !important;padding:8px 14px !important;}
+.trainCard{width:760px !important;padding:18px 22px !important;border-radius:20px !important;}
+.trainCard h1{font-size:36px !important;margin:0 0 6px !important;}
+.trainCard p{font-size:18px !important;line-height:1.4 !important;margin:6px 0 !important;}
+.trainStats{gap:8px !important;margin:10px 0 !important;}
+.trainTableBox{padding:8px !important;font-size:18px !important;border-radius:12px !important;}
+.trainBig{font-size:28px !important;}
+.trainProgress{height:16px !important;margin:8px 0 !important;}
+</style>
 </head>
 <body>
 <div class="screen"><div class="table">
-  <div class="title">象棋麻將 Alpha 0.4.58 <span id="modeTag" class="modeTag">未選模式</span></div><button class="topMenuBtn" onclick="showStart()">返回主選單</button><button id="soundBtn" class="soundBtn" onclick="toggleSound()">音效：開</button><button class="helpBtn" onclick="openHelp()">？ 教學</button><div class="liveSpeedBox">AI速度：<span id="speedValueLive">0.8秒</span> <input id="aiSpeedLive" type="range" min="0.3" max="1.5" step="0.1" value="0.8" oninput="syncLiveSpeed(this.value)"></div>
+  <div class="title">象棋麻將 Alpha 0.5.01.00 <span id="modeTag" class="modeTag">未選模式</span></div><button class="topMenuBtn" onclick="showStart()">返回主選單</button><button id="soundBtn" class="soundBtn" onclick="toggleSound()">音效：開</button><button id="southAIHostBtn" class="aiHostBtn" onclick="toggleSouthAIHost()">南家託管：關</button><button class="helpBtn" onclick="openHelp()">？ 教學</button><div class="liveSpeedBox">AI速度：<span id="speedValueLive">0.8秒</span> <input id="aiSpeedLive" type="range" min="0.3" max="1.5" step="0.1" value="0.8" oninput="syncLiveSpeed(this.value)"></div>
   <div class="seat north"><div class="seatName">北卒</div><div class="seatSub">北家／AI</div><div id="hand2" class="hand"></div></div>
   <div class="seat east"><div class="seatName">東將</div><div class="seatSub">東家／AI</div><div id="hand1" class="hand"></div></div>
   <div class="seat west"><div class="seatName">西象</div><div class="seatSub">西家／AI</div><div id="hand3" class="hand"></div></div>
@@ -847,9 +887,15 @@
   </div>
 </div>
 
+
+<div id="trainNotice" class="trainNotice show"><div class="trainNoticeCard compactNotice">
+  <h1>AI 訓練建議</h1>
+  <p>首次建議先訓練 <b>1000局</b>。56子困難AI會學出牌、吃碰槓、立直與防守。</p>
+  <div class="trainMini">32子仍只允許吃；不開放碰、槓。</div>
+  <div class="modeBtns compactBtns"><button class="btn" onclick="closeTrainNotice()">開始</button><button class="btn gray" onclick="closeTrainNotice();openTrainingPanel()">訓練</button></div>
+</div></div>
 <div id="start" class="start show"><div class="card">
   <h1>象棋麻將</h1>
-  <p>請選擇玩法與人數。東南西北只是座位，棋子本身不冠方位。</p>
   <div class="speedBox">AI反應時間：<span id="speedValue" class="speedValue">0.8秒</span><br><span>0.3秒</span> <input id="aiSpeed" type="range" min="0.3" max="1.5" step="0.1" value="0.8" oninput="syncMenuSpeed(this.value)"> <span>1.5秒</span></div>
   <h2>玩法</h2>
   <div class="mainSelect">
@@ -869,7 +915,23 @@
     <button id="aiHardBtn" class="selectBtn" type="button" onclick="selectAIDifficulty('hard')">困難</button>
   </div>
   <div id="aiDifficultyNote" class="aiDifficultyNote">中等：會看向聽數，偶爾吃碰。</div>
-  <div class="modeBtns"><button class="btn bigbtn" type="button" onclick="startSelectedGame()">開始對局</button></div>
+  <div id="aiDbBox" class="aiDbBox"><b>AI經驗庫</b><div class="aiDbGrid"><span>訓練局數：<b id="aiDbGames">0</b>局</span><span>資料筆數：<b id="aiDbRecords">0</b>/1300</span><span>自摸：<b id="aiDbSelfDraw">0</b></span><span>榮和：<b id="aiDbRon">0</b></span><span>流局：<b id="aiDbDraw">0</b></span><span>放槍率參考：<b id="aiDbDealIn">0%</b></span></div></div>
+  <div class="modeBtns"><button class="btn bigbtn" type="button" onclick="startSelectedGame()">開始對局</button><button class="btn bigbtn gray" type="button" onclick="openTrainingPanel()">AI訓練</button><button class="btn gray" type="button" onclick="clearAIExperienceDB()">清空資料庫</button></div>
+</div></div>
+
+<div id="trainingPanel" class="trainOverlay"><div class="trainCard">
+  <h1>AI 四局訓練模式</h1>
+  <p>固定使用56子困難AI訓練；每一批同時模擬4局，寫入 IndexedDB 經驗庫。</p>
+  <div class="trainMini">目標：<input id="trainTarget" type="number" value="1000" min="4" step="4" style="width:110px;font-size:22px;font-weight:1000;text-align:center"> 局　目前完成：<span id="trainDone" class="trainBig">0</span> 局</div>
+  <div class="trainProgress"><div id="trainProgressFill" class="trainProgressFill"></div></div>
+  <div class="trainStats">
+    <div class="trainTableBox">訓練桌1<div id="trainT0" class="trainBig">0</div></div>
+    <div class="trainTableBox">訓練桌2<div id="trainT1" class="trainBig">0</div></div>
+    <div class="trainTableBox">訓練桌3<div id="trainT2" class="trainBig">0</div></div>
+    <div class="trainTableBox">訓練桌4<div id="trainT3" class="trainBig">0</div></div>
+  </div>
+  <div id="trainLog" class="trainMini">尚未開始。</div>
+  <div class="modeBtns"><button id="trainStartBtn" class="btn" onclick="startFourTableTraining()">開始訓練</button><button id="trainStopBtn" class="btn gray" onclick="stopFourTableTraining()">停止</button><button class="btn gray" onclick="closeTrainingPanel()">關閉</button></div>
 </div></div>
 <div id="modal" class="modal"><div class="card"><h1 id="winTitle">胡！</h1><div id="winWho"></div><div id="winTiles" class="winTiles"></div><div class="modeBtns"><button class="btn" onclick="newGame(mode,playerCount)">同模式再來</button><button class="btn gray" onclick="showStart()">回主選單</button><button class="btn gray" onclick="closeResult()">取消</button></div></div></div>
 </div></div>
@@ -882,6 +944,7 @@ const order={卒:1,包:2,馬:3,車:4,象:5,士:6,將:7,兵:1,炮:2,傌:3,俥:4,�
 function samePair(a,b){return a===b || (mode==='32'&&((a==='將'&&b==='帥')||(a==='帥'&&b==='將')))}
 let menuMode='56',menuPlayers=4,menuAIDifficulty='normal',aiDifficulty='normal',mode='56',playerCount=4,activeOrder=[0,1,2,3],deck=[],players=[],turn=0,drawn=false,pending=false,gameOver=false,aiDelay=800,drawCounts=[0,0,0,0],declaringRiichi=false,pendingRonQueue=[],currentWinContext=null,lastWinTileId=null,lastWinTile=null,lastWinType='',lastDiscardGlow={player:null,tileId:null},winGlowPlayer=null,tableWinIds=new Set(),callGlowIds=new Set(),callGlowDiscard={player:null,tileId:null}; callGlowDiscard={player:null,tileId:null};
 const names=['南士','東將','北卒','西象'];
+let southAIControl=false;
 let soundOn=true,audioCtx=null;
 function ensureAudio(){
   if(!soundOn)return null;
@@ -928,6 +991,39 @@ function toggleSound(){
   const b=document.getElementById('soundBtn');
   if(b)b.textContent='音效：'+(soundOn?'開':'關');
   if(soundOn){ensureAudio(); playSound('draw');}
+}
+
+
+function closeTrainNotice(){const n=document.getElementById('trainNotice'); if(n)n.classList.remove('show');}
+function updateSouthAIHostButton(){
+  const b=document.getElementById('southAIHostBtn');
+  if(!b)return;
+  b.textContent='南家託管：'+(southAIControl?'開':'關');
+  b.classList.toggle('on',southAIControl);
+}
+function toggleSouthAIHost(){
+  southAIControl=!southAIControl;
+  updateSouthAIHostButton();
+  log('南家AI託管：'+(southAIControl?'開。吃、碰、槓、立直、防守都交給AI判斷。':'關。恢復玩家手動操作。'));
+  hideChoice(); pending=false; callGlowIds=new Set(); callGlowDiscard={player:null,tileId:null};
+  render();
+  if(southAIControl && !gameOver && turn===0){
+    if(drawn)setTimeout(aiPlayDrawnTurn,300);
+    else setTimeout(aiTurn,300);
+  }
+}
+function aiPlayDrawnTurn(){
+  if(gameOver||!southAIControl||turn!==0||!drawn||pending)return;
+  if(canWinFull(0)){showWin(0,'自摸');return;}
+  if(players[0].riichi){
+    if(mode==='56' && aiConcealedKongIfPossible(0)){setTimeout(aiPlayDrawnTurn,aiDelay);return;}
+    autoDiscardDrawnTile();
+    return;
+  }
+  if(aiDifficulty!=='easy' && aiCanDeclareRiichi(0)){aiDeclareRiichiAndDiscard(0);return;}
+  if(mode==='56' && aiDifficulty==='hard' && aiConcealedKongIfPossible(0)){setTimeout(aiPlayDrawnTurn,aiDelay);return;}
+  const idx=chooseDiscardAI(0);
+  discard(idx);
 }
 
 function updateSpeed(){
@@ -1045,7 +1141,7 @@ function showHelpTab(which){
 }
 function closeResult(){document.getElementById('modal').classList.remove('show')}
 function showStart(){document.getElementById('modal').classList.remove('show');document.getElementById('start').classList.add('show')}
-function newGame(m,pc){updateSpeed();mode=m||mode; playerCount=mode==='56'?4:(pc||playerCount||4); activeOrder = playerCount===2 ? [0,2] : playerCount===3 ? [0,1,3] : [0,1,2,3]; deck=makeDeck(mode); drawCounts=[0,0,0,0]; let base=mode==='56'?7:4; players=Array.from({length:4},(_,i)=>({name:names[i],hand:[],disc:[],melds:[],active:activeOrder.includes(i),riichi:false,doubleRiichi:false,ippatsu:false,riichiNeedNextDiscard:false})); for(const p of activeOrder){for(let n=0;n<base;n++)players[p].hand.push(deck.pop());} let firstDraw=deck.pop();players[0].hand.push(firstDraw);lastDrawTileId=firstDraw.id;drawCounts[0]=1; turn=0; drawn=true; pending=false; declaringRiichi=false; pendingRonQueue=[]; currentWinContext=null; gameOver=false; lastWinTileId=null; lastWinTile=null; lastWinType=''; lastDiscardGlow={player:null,tileId:null}; winGlowPlayer=null; tableWinIds=new Set(),callGlowIds=new Set(),callGlowDiscard={player:null,tileId:null}; sortAll(); document.getElementById('start').classList.remove('show'); document.getElementById('modal').classList.remove('show'); document.getElementById('modeTag').textContent=mode+'子型／'+playerCount+'人／AI '+aiDifficultyLabel(); document.getElementById('ruleText').innerHTML=mode==='56'?'56子型：僅4人。可吃、碰、明槓、暗槓。胡牌：兩個刻／順，加一騎（對子）。順子僅限將士象／帥仕相、車馬包／俥傌炮。':'32子型：2～4人。只可吃，不可碰、不可槓。胡牌：一個刻／順，加一騎（對子），或五卒／五兵。32子型只有將＝帥可作一騎，其餘紅黑棋不相等。順子僅限將士象／帥仕相、車馬包／俥傌炮。'; log('開局：'+mode+'子型，'+playerCount+'人。南家起手，請打牌。'); render(); renderYakuGuide();renderYakuGuide();}
+function newGame(m,pc){updateSpeed();mode=m||mode; playerCount=mode==='56'?4:(pc||playerCount||4); activeOrder = playerCount===2 ? [0,2] : playerCount===3 ? [0,1,3] : [0,1,2,3]; deck=makeDeck(mode); drawCounts=[0,0,0,0]; let base=mode==='56'?7:4; players=Array.from({length:4},(_,i)=>({name:names[i],hand:[],disc:[],melds:[],active:activeOrder.includes(i),riichi:false,doubleRiichi:false,ippatsu:false,riichiNeedNextDiscard:false})); for(const p of activeOrder){for(let n=0;n<base;n++)players[p].hand.push(deck.pop());} let firstDraw=deck.pop();players[0].hand.push(firstDraw);lastDrawTileId=firstDraw.id;drawCounts[0]=1; turn=0; drawn=true; pending=false; declaringRiichi=false; pendingRonQueue=[]; currentWinContext=null; gameOver=false; lastWinTileId=null; lastWinTile=null; lastWinType=''; lastDiscardGlow={player:null,tileId:null}; winGlowPlayer=null; tableWinIds=new Set(),callGlowIds=new Set(),callGlowDiscard={player:null,tileId:null}; sortAll(); document.getElementById('start').classList.remove('show'); document.getElementById('modal').classList.remove('show'); document.getElementById('modeTag').textContent=mode+'子型／'+playerCount+'人／AI '+aiDifficultyLabel(); document.getElementById('ruleText').innerHTML=mode==='56'?'56子型：僅4人。可吃、碰、明槓、暗槓。胡牌：兩個刻／順，加一騎（對子）。順子僅限將士象／帥仕相、車馬包／俥傌炮。':'32子型：2～4人。只可吃，不可碰、不可槓。胡牌：一個刻／順，加一騎（對子），或五卒／五兵。32子型只有將＝帥可作一騎，其餘紅黑棋不相等。順子僅限將士象／帥仕相、車馬包／俥傌炮。'; log('開局：'+mode+'子型，'+playerCount+'人。'+(southAIControl?'南家AI託管中。':'南家起手，請打牌。')); updateSouthAIHostButton(); render(); renderYakuGuide();renderYakuGuide(); if(southAIControl)setTimeout(aiPlayDrawnTurn,500);}
 function sortAll(){players.forEach(pl=>pl.hand.sort((a,b)=>(isRed(a.p)-isRed(b.p))||order[a.p]-order[b.p]||a.p.localeCompare(b.p,'zh-Hant')))}
 function tileHTML(t,cls='',back=false){if(back)return `<div class="tile ${cls} back"></div>`; return `<div class="tile ${cls} ${isRed(t.p)?'red':''}"><div class="camp">${isRed(t.p)?'紅':'黑'}</div><div class="piece">${t.p}</div></div>`}
 function tileEl(t,cls='',back=false){let d=document.createElement('div');d.innerHTML=tileHTML(t,cls,back);return d.firstChild}
@@ -1058,7 +1154,7 @@ function precomputeSelfActionGlow(){
     if(kp){ callGlowIds=new Set(c[kp].slice(0,4).map(i=>players[0].hand[i].id)); }
   }
 }
-function render(){precomputeSelfActionGlow();document.querySelectorAll('.seat').forEach(x=>x.classList.remove('turn'));let activeSeat=document.querySelector(['.south','.east','.north','.west'][turn]);if(activeSeat&&!gameOver)activeSeat.classList.add('turn');let hint=document.getElementById('turnHint');if(hint){hint.classList.toggle('show',turn===0&&!pending&&!gameOver);hint.textContent=players[0]&&players[0].riichi?(drawn?'立直中：可自摸／暗槓／摸切':'立直中：自動摸牌'):declaringRiichi?'宣告立直：請打出橫置牌':(drawn?'你的回合：請出牌':'你的回合：請摸牌')}for(let p=0;p<4;p++){let seat=document.querySelector(['.south','.east','.north','.west'][p]); let disc=document.getElementById('disc'+p); let h=document.getElementById('hand'+p); if(!players[p]||!players[p].active){seat.classList.add('hidden');disc.classList.add('hidden');h.innerHTML='';disc.innerHTML='';continue}else{seat.classList.remove('hidden');disc.classList.remove('hidden')} h.innerHTML=''; players[p].hand.forEach((t,i)=>{let cls=(p===0?'':'small'); if(tableWinIds.has(t.id))cls+=' winGlow'; if(t.id===lastWinTileId)cls+=' goldGlow'; if(p===0&&turn===0&&drawn&&!pending&&!gameOver&&t.id===lastDrawTileId)cls+=' drawGlow'; if(callGlowIds.has(t.id))cls+= declaringRiichi ? ' riichiCandidate' : ' callGlow'; let el=tileEl(t,cls,(p!==0)&&!gameOver); if(p===1)el.classList.add('sideEast'); if(p===3)el.classList.add('sideWest'); if(p===0&&turn===0&&drawn&&!pending&&!gameOver&&(!declaringRiichi||isRiichiLegalDiscardIndex(i)))el.onclick=()=>discard(i); h.appendChild(el)}); let d=document.getElementById('disc'+p);d.innerHTML=''; players[p].disc.forEach(t=>d.appendChild(tileEl(t,'small'+(t.riichiDiscard?' riichiDiscard':'')+(t.riichiFlash?' riichiFlash':'')+((lastDiscardGlow.player===p&&lastDiscardGlow.tileId===t.id)?' goldGlow':'')+((callGlowDiscard.player===p&&callGlowDiscard.tileId===t.id)?' callGlow':''))))}
+function render(){precomputeSelfActionGlow();document.querySelectorAll('.seat').forEach(x=>x.classList.remove('turn'));let activeSeat=document.querySelector(['.south','.east','.north','.west'][turn]);if(activeSeat&&!gameOver)activeSeat.classList.add('turn');let hint=document.getElementById('turnHint');if(hint){hint.classList.toggle('show',turn===0&&!pending&&!gameOver);hint.textContent=southAIControl?'南家AI託管中：由電腦自動判定吃碰槓與防守':players[0]&&players[0].riichi?(drawn?'立直中：可自摸／暗槓／摸切':'立直中：自動摸牌'):declaringRiichi?'宣告立直：請打出橫置牌':(drawn?'你的回合：請出牌':'你的回合：請摸牌')}for(let p=0;p<4;p++){let seat=document.querySelector(['.south','.east','.north','.west'][p]); let disc=document.getElementById('disc'+p); let h=document.getElementById('hand'+p); if(!players[p]||!players[p].active){seat.classList.add('hidden');disc.classList.add('hidden');h.innerHTML='';disc.innerHTML='';continue}else{seat.classList.remove('hidden');disc.classList.remove('hidden')} h.innerHTML=''; players[p].hand.forEach((t,i)=>{let cls=(p===0?'':'small'); if(tableWinIds.has(t.id))cls+=' winGlow'; if(t.id===lastWinTileId)cls+=' goldGlow'; if(p===0&&turn===0&&drawn&&!pending&&!gameOver&&t.id===lastDrawTileId)cls+=' drawGlow'; if(callGlowIds.has(t.id))cls+= declaringRiichi ? ' riichiCandidate' : ' callGlow'; let el=tileEl(t,cls,(p!==0)&&!gameOver); if(p===1)el.classList.add('sideEast'); if(p===3)el.classList.add('sideWest'); if(p===0&&!southAIControl&&turn===0&&drawn&&!pending&&!gameOver&&(!declaringRiichi||isRiichiLegalDiscardIndex(i)))el.onclick=()=>discard(i); h.appendChild(el)}); let d=document.getElementById('disc'+p);d.innerHTML=''; players[p].disc.forEach(t=>d.appendChild(tileEl(t,'small'+(t.riichiDiscard?' riichiDiscard':'')+(t.riichiFlash?' riichiFlash':'')+((lastDiscardGlow.player===p&&lastDiscardGlow.tileId===t.id)?' goldGlow':'')+((callGlowDiscard.player===p&&callGlowDiscard.tileId===t.id)?' callGlow':''))))}
  for(let mp=0;mp<4;mp++){
    let me=document.getElementById('meld'+mp);
    if(!me)continue;
@@ -1132,6 +1228,7 @@ function autoDiscardDrawnTile(){
 function renderActions(){
  let a=document.getElementById('actions');a.innerHTML='';
  if(gameOver||pending)return;
+ if(southAIControl&&turn===0){a.innerHTML='<button class="btn gray" disabled>AI託管中</button>';return;}
  if(turn===0&&!drawn){addBtn('摸牌',draw)}
  if(turn===0&&drawn){
    if(declaringRiichi){
@@ -1168,7 +1265,7 @@ function renderActions(){
  }
 }
 function addBtn(txt,fn,cls=''){let b=document.createElement('button');b.className='btn '+cls;b.textContent=txt;if(fn)b.onclick=fn;else b.disabled=true;document.getElementById('actions').appendChild(b)}
-function draw(){if(turn!==0||drawn||pending)return;if(!deck.length){showDraw();return}let dt=deck.pop();players[0].hand.push(dt);lastDrawTileId=dt.id;drawCounts[0]=(drawCounts[0]||0)+1;sortAll();drawn=true;animate('摸');playSound('draw');log('南家摸牌。');if(players[0].riichi&&!canWinFull(0))players[0].ippatsu=false;render();if(players[0].riichi&&!canWinFull(0)&&!(mode==='56'&&canConcealedKong(0)))setTimeout(autoDiscardDrawnTile,350)}
+function draw(){if(southAIControl||turn!==0||drawn||pending)return;if(!deck.length){showDraw();return}let dt=deck.pop();players[0].hand.push(dt);lastDrawTileId=dt.id;drawCounts[0]=(drawCounts[0]||0)+1;sortAll();drawn=true;animate('摸');playSound('draw');log('南家摸牌。');if(players[0].riichi&&!canWinFull(0))players[0].ippatsu=false;render();if(players[0].riichi&&!canWinFull(0)&&!(mode==='56'&&canConcealedKong(0)))setTimeout(autoDiscardDrawnTile,350)}
 
 
 function triggerRiichiEffect(p,t){
@@ -1219,7 +1316,7 @@ function discard(i){if(turn!==0||!drawn||pending)return;if(declaringRiichi&&!isR
  if(declaringRiichi){markRiichiDiscardIfNeeded(0,t,true);players[0].riichi=true;declaringRiichi=false;callGlowIds=new Set();playSound('kong');setTimeout(()=>playSound('pong'),120);log(players[0].doubleRiichi?'南家 雙立直！':'南家 立直。');}
  else markRiichiDiscardIfNeeded(0,t,false);
  lastDrawTileId=null;players[0].disc.push(t);drawn=false;playSound('discard');log('南家 打出 '+t.p);render();if(afterDiscard(0,t))return;nextTurn()}
-function nextTurn(){let i=activeOrder.indexOf(turn);turn=activeOrder[(i+1)%activeOrder.length];drawn=false;render();if(!deck.length){setTimeout(showDraw,aiDelay);return}if(turn===0&&players[0]&&players[0].riichi)setTimeout(draw,350);else if(turn!==0)setTimeout(aiTurn,aiDelay)}
+function nextTurn(){let i=activeOrder.indexOf(turn);turn=activeOrder[(i+1)%activeOrder.length];drawn=false;render();if(!deck.length){setTimeout(showDraw,aiDelay);return}if(turn===0&&southAIControl)setTimeout(aiTurn,aiDelay);else if(turn===0&&players[0]&&players[0].riichi)setTimeout(draw,350);else if(turn!==0)setTimeout(aiTurn,aiDelay)}
 
 function aiDifficultyLabel(){return aiDifficulty==='easy'?'簡單':aiDifficulty==='hard'?'困難':'中等'}
 function cloneTiles(arr){return arr.map(t=>({p:t.p,id:t.id||Math.random().toString(36).slice(2)}));}
@@ -1280,7 +1377,8 @@ function aiShouldCall(p,from,t,idxs,name,kong=false){
   const sim=simulateCallState(p,from,t,idxs,name,kong);
   const after=aiShapeScore(p,sim.hand,sim.melds);
   const improves=after.draws<before.draws;
-  const delta=after.score-before.score;
+  const expCall = aiExperienceBonus(p,name+':'+t.p,sim.hand);
+  const delta=after.score-before.score+expCall;
   if(aiDifficulty==='normal'){
     if(improves)return true;
     const chance=name==='吃'?0.30:name==='碰'?0.50:0.75;
@@ -1339,17 +1437,23 @@ function chooseDiscardAI(p){
     const rest=hand.filter((_,k)=>k!==i);
     const shape=aiShapeScore(p,rest,players[p].melds);
     let penalty=0;
+    const riichiThreat=activeOrder.some(q=>q!==p&&players[q]&&players[q].riichi);
+    if(riichiThreat){
+      const seen=activeOrder.reduce((n,q)=>n+(players[q].disc||[]).filter(x=>x.p===hand[i].p).length,0);
+      penalty += seen>0 ? -18 : 38;
+    }
     const c={}; rest.forEach(t=>c[t.p]=(c[t.p]||0)+1);
     if((c[hand[i].p]||0)>=1)penalty+=6;
     for(const seq of seqs){ if(seq.includes(hand[i].p) && seq.filter(x=>(c[x]||0)>0).length>=2)penalty+=5; }
-    const val=shape.draws*100-shape.score+penalty;
+    const exp = aiExperienceBonus(p,'discard:'+hand[i].p,rest);
+    const val=shape.draws*100-shape.score+penalty-exp;
     if(val<bestScore){bestScore=val;best=i;}
   }
   return best;
 }
 function aiCheckCallsAfterDiscard(from,t){
   if(gameOver)return false;
-  const callers=activeOrder.filter(p=>p!==from && p!==0 && players[p]&&players[p].active&&!players[p].riichi);
+  const callers=activeOrder.filter(p=>p!==from && (p!==0||southAIControl) && players[p]&&players[p].active&&!players[p].riichi);
   const candidates=[];
   for(const p of callers){
     if(mode==='56'){
@@ -1371,7 +1475,7 @@ function aiCheckCallsAfterDiscard(from,t){
 }
 
 function aiCanDeclareRiichi(p){
-  return p!==0 && riichiDiscardIndexes(p).length>0;
+  return (p!==0||southAIControl) && riichiDiscardIndexes(p).length>0;
 }
 function aiDeclareRiichiAndDiscard(p){
   const idxs=riichiDiscardIndexes(p);
@@ -1527,7 +1631,10 @@ function continueRonResults(){
   }
 }
 function afterDiscard(from,t){
- if(from!==0){
+ if(from!==0 && southAIControl){
+   if(canWinWithTile(0,t))return beginRonResults(from,t,[0]);
+ }
+ if(from!==0 && !southAIControl){
    let opts=[]; let glowInfo=[];
    if(canWinWithTile(0,t))opts.push({label:'榮和',act:()=>{callGlowIds=new Set();callGlowDiscard={player:null,tileId:null};beginRonResults(from,t,[0])}});
    if(mode==='56'&&!players[0].riichi){
@@ -1545,7 +1652,7 @@ function afterDiscard(from,t){
      return true
    }
  }
- const winners=ronWinnersForDiscard(from,t).filter(p=>p!==0);
+ const winners=ronWinnersForDiscard(from,t).filter(p=>p!==0||southAIControl);
  if(winners.length){
    beginRonResults(from,t,winners);
    return true;
@@ -2107,7 +2214,193 @@ function animateWin(txt){let el=document.getElementById('toast');el.textContent=
 function animateWinAt(txt,p){let el=document.getElementById('toast');el.textContent=txt;resetToast(el);el.classList.add('seatToast','pos'+p);void el.offsetWidth;el.classList.add('winShow')}
 function animateDraw(txt){let el=document.getElementById('toast');el.textContent=txt;resetToast(el);void el.offsetWidth;el.classList.add('drawShow')}
 function log(s){let l=document.getElementById('log');l.innerHTML=s+'<br>'+l.innerHTML}
+
+
+/* ===== 0.5 IndexedDB 經驗庫 + 四局訓練 ===== */
+const AI_DB_NAME='ChessMahjongAIExperience_v050';
+const AI_DB_STORE='records';
+const AI_META_STORE='meta';
+const AI_DB_LIMIT=1300;
+let aiDb=null, aiExpCache=new Map(), aiDbMeta={games:0,selfDraw:0,ron:0,draw:0,dealIn:0,updated:0};
+let trainingRunning=false, trainingDone=0, trainingTables=[0,0,0,0];
+
+function openAIExperienceDB(){
+  return new Promise((resolve,reject)=>{
+    if(aiDb){resolve(aiDb);return;}
+    if(!('indexedDB' in window)){console.warn('IndexedDB unavailable');resolve(null);return;}
+    const req=indexedDB.open(AI_DB_NAME,1);
+    req.onupgradeneeded=e=>{
+      const db=e.target.result;
+      if(!db.objectStoreNames.contains(AI_DB_STORE)){
+        const st=db.createObjectStore(AI_DB_STORE,{keyPath:'key'});
+        st.createIndex('score','score',{unique:false});
+        st.createIndex('used','used',{unique:false});
+      }
+      if(!db.objectStoreNames.contains(AI_META_STORE))db.createObjectStore(AI_META_STORE,{keyPath:'key'});
+    };
+    req.onsuccess=e=>{aiDb=e.target.result;resolve(aiDb);};
+    req.onerror=()=>reject(req.error);
+  });
+}
+function txStore(name,mode='readonly'){
+  if(!aiDb)return null;
+  return aiDb.transaction(name,mode).objectStore(name);
+}
+async function loadAIExperienceDB(){
+  try{
+    await openAIExperienceDB();
+    if(!aiDb)return;
+    aiExpCache.clear();
+    await new Promise(resolve=>{
+      const st=txStore(AI_DB_STORE); const req=st.openCursor();
+      req.onsuccess=e=>{const cur=e.target.result;if(cur){aiExpCache.set(cur.value.key,cur.value);cur.continue();}else resolve();};
+      req.onerror=()=>resolve();
+    });
+    await new Promise(resolve=>{
+      const st=txStore(AI_META_STORE); const req=st.get('global');
+      req.onsuccess=()=>{if(req.result)aiDbMeta=Object.assign(aiDbMeta,req.result.value||{});resolve();};
+      req.onerror=()=>resolve();
+    });
+    updateAIExperienceUI();
+  }catch(e){console.warn('AI DB load failed',e);}
+}
+function saveAIMeta(){
+  if(!aiDb)return;
+  const st=txStore(AI_META_STORE,'readwrite');
+  st.put({key:'global',value:aiDbMeta});
+}
+function compactHandKey(hand){
+  const c={};(hand||[]).forEach(t=>c[t.p]=(c[t.p]||0)+1);
+  return allPieces.map(p=>c[p]||0).join('');
+}
+function expKey(action,hand){return '56|'+action+'|'+compactHandKey(hand).slice(0,14);}
+function aiExperienceBonus(p,action,hand){
+  if(aiDifficulty==='easy')return 0;
+  const rec=aiExpCache.get(expKey(action,hand));
+  if(!rec||!rec.count)return 0;
+  const winRate=(rec.win||0)/rec.count;
+  const risk=(rec.dealIn||0)/rec.count;
+  let bonus=(winRate*70)+(rec.avgScore||0)-risk*80;
+  if(aiDifficulty==='normal')bonus*=0.5;
+  return Math.max(-40,Math.min(90,bonus));
+}
+function putAIRecord(action,hand,outcome={}){
+  if(!aiDb)return;
+  const key=expKey(action,hand);
+  const old=aiExpCache.get(key)||{key,action,count:0,win:0,selfDraw:0,ron:0,draw:0,dealIn:0,avgScore:0,used:0,updated:0,score:0};
+  old.count++; old.used++; old.updated=Date.now();
+  if(outcome.win)old.win++;
+  if(outcome.selfDraw)old.selfDraw++;
+  if(outcome.ron)old.ron++;
+  if(outcome.draw)old.draw++;
+  if(outcome.dealIn)old.dealIn++;
+  old.avgScore=((old.avgScore*(old.count-1))+(outcome.score||0))/old.count;
+  old.score=(old.win*4+old.selfDraw*3+old.ron*2+old.draw-old.dealIn*3)+old.avgScore;
+  aiExpCache.set(key,old);
+  txStore(AI_DB_STORE,'readwrite').put(old);
+}
+async function pruneAIExperienceDB(){
+  if(aiExpCache.size<=AI_DB_LIMIT)return;
+  const arr=[...aiExpCache.values()].sort((a,b)=>(a.score-b.score)||(a.used-b.used)||(a.updated-b.updated));
+  const del=arr.slice(0,Math.max(0,aiExpCache.size-AI_DB_LIMIT));
+  const st=txStore(AI_DB_STORE,'readwrite');
+  del.forEach(r=>{aiExpCache.delete(r.key);st.delete(r.key);});
+}
+function updateAIExperienceUI(){
+  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  set('aiDbGames',aiDbMeta.games||0); set('aiDbRecords',aiExpCache.size||0);
+  set('aiDbSelfDraw',aiDbMeta.selfDraw||0); set('aiDbRon',aiDbMeta.ron||0); set('aiDbDraw',aiDbMeta.draw||0);
+  const total=Math.max(1,(aiDbMeta.games||0)); set('aiDbDealIn',Math.round(((aiDbMeta.dealIn||0)/total)*100)+'%');
+}
+async function clearAIExperienceDB(){
+  if(!confirm('確定清空 AI 經驗庫？'))return;
+  await openAIExperienceDB();
+  if(aiDb){
+    txStore(AI_DB_STORE,'readwrite').clear(); txStore(AI_META_STORE,'readwrite').clear();
+  }
+  aiExpCache.clear(); aiDbMeta={games:0,selfDraw:0,ron:0,draw:0,dealIn:0,updated:0};
+  updateAIExperienceUI(); log('AI經驗庫已清空。');
+}
+function openTrainingPanel(){
+  const el=document.getElementById('trainingPanel'); if(el)el.classList.add('show');
+  updateTrainingUI(); updateAIExperienceUI();
+}
+function closeTrainingPanel(){const el=document.getElementById('trainingPanel'); if(el)el.classList.remove('show');}
+function stopFourTableTraining(){trainingRunning=false; const el=document.getElementById('trainLog'); if(el)el.textContent='已停止。';}
+function updateTrainingUI(){
+  const target=parseInt((document.getElementById('trainTarget')||{}).value||1000,10);
+  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  set('trainDone',trainingDone);
+  for(let i=0;i<4;i++)set('trainT'+i,trainingTables[i]||0);
+  const fill=document.getElementById('trainProgressFill'); if(fill)fill.style.width=Math.min(100,Math.round(trainingDone/Math.max(1,target)*100))+'%';
+}
+function randomTrainingHand(){
+  const d=makeDeck('56'); const h=[]; for(let i=0;i<8;i++)h.push(d.pop()); return h;
+}
+function syntheticOutcome(action,hand){
+  const c={}; hand.forEach(t=>c[t.p]=(c[t.p]||0)+1);
+  let base=0.22;
+  if(action.startsWith('discard'))base+=0.05;
+  if(action.startsWith('PASS'))base+=0.03;
+  if(action.startsWith('碰')||action.startsWith('吃'))base+=0.04;
+  if(action.startsWith('槓'))base+=0.02;
+  Object.values(c).forEach(v=>{if(v>=2)base+=0.025;if(v>=3)base+=0.035;});
+  for(const seq of seqs){const have=seq.filter(p=>c[p]).length;if(have>=2)base+=0.03;if(have==3)base+=0.05;}
+  const win=Math.random()<Math.min(0.72,base);
+  const selfDraw=win&&Math.random()<0.38, ron=win&&!selfDraw;
+  const draw=!win&&Math.random()<0.32;
+  const dealIn=!win&&!draw&&Math.random()<0.18;
+  const score=(win?80:0)+(selfDraw?30:0)+(ron?18:0)+(draw?5:0)-(dealIn?45:0)+Math.round(Math.random()*20);
+  return {win,selfDraw,ron,draw,dealIn,score};
+}
+function runOneSyntheticTraining(tableIndex){
+  const hand=randomTrainingHand();
+  const actions=[];
+  const t=hand[Math.floor(Math.random()*hand.length)];
+  actions.push('discard:'+t.p);
+  actions.push(Math.random()<0.45?'PASS:'+t.p:'吃:'+t.p);
+  actions.push(Math.random()<0.55?'碰:'+t.p:'槓:'+t.p);
+  if(Math.random()<0.25)actions.push('立直');
+  actions.forEach(a=>putAIRecord(a,hand,syntheticOutcome(a,hand)));
+  const final=syntheticOutcome('game',hand);
+  aiDbMeta.games++; if(final.selfDraw)aiDbMeta.selfDraw++; if(final.ron)aiDbMeta.ron++; if(final.draw)aiDbMeta.draw++; if(final.dealIn)aiDbMeta.dealIn++;
+  aiDbMeta.updated=Date.now(); trainingTables[tableIndex]++;
+}
+async function startFourTableTraining(){
+  await openAIExperienceDB();
+  trainingRunning=true; trainingDone=0; trainingTables=[0,0,0,0];
+  const target=parseInt((document.getElementById('trainTarget')||{}).value||1000,10);
+  const logEl=document.getElementById('trainLog'); if(logEl)logEl.textContent='四局並行訓練中……';
+  async function batch(){
+    if(!trainingRunning)return;
+    for(let i=0;i<4 && trainingDone<target;i++){runOneSyntheticTraining(i);trainingDone++;}
+    saveAIMeta(); await pruneAIExperienceDB(); updateTrainingUI(); updateAIExperienceUI();
+    if(trainingDone>=target){trainingRunning=false;if(logEl)logEl.textContent='訓練完成：'+trainingDone+'局。';return;}
+    setTimeout(batch,1);
+  }
+  batch();
+}
+// 覆蓋公告關閉：只顯示一次
+const _oldCloseTrainNotice=window.closeTrainNotice;
+window.closeTrainNotice=function(){try{localStorage.setItem('cm_ai_notice_v050','1');}catch(e){} const el=document.getElementById('trainNotice'); if(el)el.classList.remove('show');};
+function maybeShowTrainNotice(){try{if(localStorage.getItem('cm_ai_notice_v050')==='1'){const el=document.getElementById('trainNotice');if(el)el.classList.remove('show');}}catch(e){}}
+// 實戰結束也更新全域局數，但不大量污染行動資料
+const _oldShowWin=showWin;
+showWin=function(p,type){
+  try{openAIExperienceDB().then(()=>{aiDbMeta.games++; if(type==='自摸')aiDbMeta.selfDraw++; else aiDbMeta.ron++; aiDbMeta.updated=Date.now(); saveAIMeta(); updateAIExperienceUI();});}catch(e){}
+  return _oldShowWin(p,type);
+};
+const _oldShowDraw=showDraw;
+showDraw=function(){
+  try{openAIExperienceDB().then(()=>{aiDbMeta.games++; aiDbMeta.draw++; aiDbMeta.updated=Date.now(); saveAIMeta(); updateAIExperienceUI();});}catch(e){}
+  return _oldShowDraw();
+};
+
+loadAIExperienceDB(); maybeShowTrainNotice();
+
 showStart();selectMenuMode('56');updateSpeed();renderYakuGuide();
+
+setTimeout(()=>{updateSouthAIHostButton();},50);
 </script>
 </body>
 </html>
